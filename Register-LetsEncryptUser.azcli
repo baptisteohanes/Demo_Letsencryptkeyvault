@@ -1,0 +1,8 @@
+az login
+az account set --subscription "00000000-0000-0000-0000-0000000000"
+az-acme.exe register `
+          --server https://acme-v02.api.letsencrypt.org/directory `
+          --key-vault-uri https://keyvaultname.vault.azure.net/ `
+          --account-secret az-acme-registration `
+          --email mail@mail.com `
+          --agree-tos
