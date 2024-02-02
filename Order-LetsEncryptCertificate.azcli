@@ -3,12 +3,12 @@ az account set --subscription "00000000-0000-0000-0000-0000000000"
 az-acme.exe order `
         --server https://acme-v02.api.letsencrypt.org/directory `
         --key-vault-uri https://keyvaultname.vault.azure.net/ `
-        --certificate CertficateNameinKV `
+        --certificate CertificateNameinKV `
         --subject SAN `
         --sans SANS `
         --account-secret az-acme-registration `
         --dns-provider Azure `
         --azure-dns-zone AzurePublicDNSZoneResourceID `
-        --renew-within-days 90 `
+        --renew-within-days 7 `
 	--dns-lookup 168.63.129.16:53 `
 	--verbose

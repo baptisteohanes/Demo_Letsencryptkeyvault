@@ -10,6 +10,8 @@ VAULT_URL = os.environ["VAULT_URL"]
 AZURE_CLIENT_ID = os.environ["AZURE_CLIENT_ID"]
 IDENTITY_ENDPOINT= os.environ["IDENTITY_ENDPOINT"]
 IDENTITY_HEADER = os.environ["IDENTITY_HEADER"]
+os.environ["MSI_HEADER"] = os.environ["IDENTITY_HEADER"]
+os.environ["MSI_ENDPOINT"] = os.environ["IDENTITY_ENDPOINT"]
 
 print(f"Logging in to {VAULT_URL} with client id '{AZURE_CLIENT_ID}'...")
 print(f"IDENTITY_ENDPOINT: {IDENTITY_ENDPOINT}")
@@ -30,4 +32,5 @@ for certificate in certificates:
 print("\nrun_sample done")
 
 #Let's login with AzLogin
-subprocess.run(["az", "login", "--debug","--identity", "--username", AZURE_CLIENT_ID])
+subprocess.run(["az", "login", "--debug","--identity"])
+subprocess.run(["az-acme help renew"])
